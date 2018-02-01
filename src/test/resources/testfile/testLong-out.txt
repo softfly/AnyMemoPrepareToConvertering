@@ -1,0 +1,41 @@
+﻿"java.util.Arrays<br/>convert to list"	"List l = Arrays.asList(new int[] {1, 2});<br/>l.add(1);"	java.util.Arrays	
+"java.util.Arrays<br/>search"	"sort(Object[] a, ?int fromIndex, ?int toIndex)<br/>T binarySearch(T[] a, ?int fromIndex, ?int toIndex, T key, ?comparator), - must be sorted, O(logn)"	java.util.Arrays	
+"java.util.Arrays<br/>copy (2)"	"T[] copyOf(T[] original, int newLength)<br/>T[] copyOfRange(T[] original, int from, int to)"	java.util.Arrays	
+"java.util.Arrays<br/>deep (3)"	"deep - porównuje również zagnieżdżone tablice<br/>boolean deepEquals(T[] a1, T[] a2)<br/>int deepHashCode(Object[] a)<br/>String deepToString(Object[] a)"	java.util.Arrays	
+"java.util.Arrays<br/>Assigns the specified Object reference to each element of the specified array of Objects."	fill(Object[] a, ?int fromIndex, ?int toIndex, Object val)	java.util.Arrays	
+			
+"java.util.Collections<br/>search"	"sort(List list, ?Comparator)<br/>int binarySearch(List, T key, ?Comparator)"	java.util.Collections	
+"java.util.Collections<br/>Returns true if the two specified collections have no elements in common."	"<br/>boolean disjoint(Collection c1, Collection c2)"	java.util.Collections	
+"java.util.Collections<br/>search list in list (2)"	"int indexOfSubList(List source, List target)<br/>int lastIndexOfSubList(List source, List target)"	java.util.Collections	
+"java.util.Collections <br/>statistics (2)"	"int frequency(Collection c, Object o)<br/>T max|min(Collection, ?Comparator)"	java.util.Collections	
+"java.util.Collections<br/>add new elements"	"boolean addAll(Collection, T...)<br/>równoważne<br/>c.addAll(Arrays.asList(elements))"	java.util.Collections	
+"java.util.Collections<br/>Copies all of the elements from one list into another."	copy(List dest, List src)	java.util.Collections	
+"java.util.Collections<br/>Replaces all of the elements of the specified list with the specified element."	fill(List list, T)	java.util.Collections	
+"java.util.Collections<br/>Returns a view of a Deque as a Last-in-first-out"	Queue asLifoQueue(Deque)	java.util.Collections	
+"java.util.Collections<br/>empty (3)"	"List&lt;T&gt; emptyList()<br/>Map&lt;K,V&gt; emptyMap()<br/>Set&lt;T&gt; emptySet()"	java.util.Collections	
+"java.util.Collections<br/>legacy APIs<br/>enumeration "	Enumeration&lt;T&gt; enumeration(Collection&lt;T&gt; c)	java.util.Collections	
+"java.util.Collections<br/>legacy APIs<br/>Returns an array list containing the elements returned by the specified enumeration in the order they are returned by the enumeration."	ArrayList list(Enumeration) 	java.util.Collections	
+"java.util.Collections<br/>Returns an immutable list consisting of n copies of the specified object."	List.addAll(Collections.nCopies(int n, T o))	java.util.Collections	
+"java.util.Collections<br/>weakHashSet "	"Set&lt;Object&gt; weakHashSet = Collections.newSetFromMap(new WeakHashMap&lt;Object, Boolean&gt;());"	java.util.Collections	
+"java.util.Collections<br/>Returns an immutable (3)"	"Set&lt;T&gt; singleton(T o)<br/>List&lt;T&gt; singletonList(T o)<br/>Map&lt;K,V&gt; singletonMap(K key, V value)"	java.util.Collections	
+"java.util.Collections<br/>Returns a dynamically typesafe view of the specified collection. <br/>Any attempt to insert an element of the wrong type will result in an immediate ClassCastException.<br/>(6)"	"Collection&lt;String&gt; c = Collections.checkedCollection(new HashSet&lt;String&gt;(), String.class);<br/><br/>1) Collection&lt;E&gt; checkedCollection(Collection&lt;E&gt; c, Class&lt;E&gt; type)<br/>2) checkedSet<br/>3) checkedSortedSet<br/>4) checkedList<br/><br/>5) Map&lt;K,V&gt; checkedMap(Map&lt;K,V&gt; m, Class&lt;K&gt; keyType, Class&lt;V&gt; valueType)<br/>6) checkedSortedMap"	java.util.Collections	
+"java.util.Collections<br/>synchronized (6)"	"iterator must be manually synched<br/>SortedSet s = Collections.synchronizedSortedSet(new TreeSet());<br/>SortedSet s2 = s.headSet(foo);<br/><br/>synchronized (s) {  // Note: s, not s2!!!<br/>Iterator i = s2.iterator(); // Must be in the synchronized block<br/>while (i.hasNext())<br/>&nbsp;System.out.println(i.next());<br/>}<br/><br/>1) Collection&lt;T&gt; synchronizedCollection(Collection&lt;T&gt; c)<br/>2) synchronizedSet<br/>3) synchronizedSortedSet<br/>4) synchronizedList<br/>5) synchronizedMap<br/>6) synchronizedSortedMap"	java.util.Collections	
+"java.util.Collections<br/>unmodifiable (6)"	"Collection&lt;T&gt; unmodifiableCollection(Collection&lt;? extends T&gt; c)<br/>unmodifiableSet<br/>unmodifiableSortedSet<br/>unmodifiableList<br/>unmodifiableMap<br/>unmodifiableSortedMap"	java.util.Collections	
+"java.util.Collections<br/>Rotates the elements in the specified list by the specified distance."	rotate(List&lt;?&gt; list, int distance)	java.util.Collections	
+"java.util.Collections<br/>Randomly permute the specified list using the specified source of randomness."	shuffle(List&lt;?&gt; list, Random rnd)	java.util.Collections	
+"java.util.Collections<br/>Swaps the elements at the specified positions in the specified list."	swap(List&lt;?&gt; list, int i, int j)	java.util.Collections	
+"java.util.Collections<br/>Reverses the order of the elements in the specified list."	reverse(List&lt;?&gt; list)	java.util.Collections	
+"java.util.Collections<br/>Returns a comparator that imposes the reverse ordering of the specified comparator."	"Arrays.sort(a, Collections.reverseOrder());<br/>reverseOrder(?Comparator&lt;T&gt; cmp)"	java.util.Collections	
+"java.text.Format<br/>extends ?? (3)"	"1) DateFormat<br/>2) MessageFormat<br/>3) NumberFormat"	java.text.Format	
+"java.text.Format<br/>Formats an object to produce a string."	String format(Object obj)	java.text	
+"java.text.Format<br/>Parses text from the beginning of the given string to produce an object."	Object parseObject(String source)  throws ParseException	java.text	
+"NumberFormat<br/>extends Format<br/>getInstace (5)"	"NF getInstance(?Locale) - number<br/>NF getCurrencyInstance(?Locale)<br/>NF getIntegerInstance(?Locale)<br/>NF getNumberInstance(?Locale)<br/>NF getPercentInstance(?Locale)<br/>(DecimalFormat)"	java.text	
+"NumberFormat<br/>extends Format<br/>parse / format (2)"	"String format(long|double number)<br/>Number(Long|Double) parse(String source) throws ParseException"	java.text	
+"getNumberInstance<br/>-1000000.4555"	"#,##0.###<br/>-1,000,000.456"	java.text	
+"getIntegerInstance<br/>-1000000.4555"	"#,##0<br/>-1,000,000"	java.text	
+"getCurrencyInstance<br/>-1000000.4555"	"¤#,##0.00;(¤#,##0.00)<br/>($1,000,000.46)"	java.text	
+"getPercentInstance<br/>-100<br/>-1"	"#,##0%<br/>-10,000%<br/>-100%"	java.text	
+"DecimalFormat <br/>extends NumberFormat (3)"	"DecimalFormat(?pattern, ?DecimalFormatSymbols)<br/>applyPattern(String pattern)<br/>toPattern()"	java.text	
+"DateFormat<br/>extends Format<br/>getInstace (5)"	"DF getInstance()<br/>DF getDateInstance(?int style, ??Locale)<br/>DF getTimeInstance(?int style, ??Locale)<br/>DF getDateTimeInstance(?int dateStyle, ?int timeStyle, ??Locale)"	java.text	
+"DateFormat<br/>extends Format"	"Calendar getCalendar()<br/>setCalendar(Calendar newCalendar)"	java.text	
+"SimpleDateFormat<br/>extends DateFormat"	"definiowanie własnego formatu<br/>SimpleDateFormat(String pattern, ?DateFormatSymbols)<br/>SimpleDateFormat(String pattern, ?Locale)"	java.text
