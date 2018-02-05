@@ -11,8 +11,12 @@ import java.util.Map;
 import pl.softfly.amprepare.AnyMemoConverterContext;
 
 public class HtmlSpecialCharsTask extends Task implements Runnable {
+	
+	protected final static int CARRIAGE_RETURN = '\r';
+	
+	protected final static int LINE_FEED = '\n';
 
-	protected final static Charset UTF_8 = Charset.forName("utf-8");
+	protected final static char[] LINE_SEPERATOR = new char[] {CARRIAGE_RETURN, LINE_FEED};
 
 	protected final BufferedReader in;
 
@@ -40,7 +44,7 @@ public class HtmlSpecialCharsTask extends Task implements Runnable {
 					l = l.replaceAll(entry.getKey(), entry.getValue());
 				}
 				out.write(l);
-				out.newLine();
+				out.write(LINE_SEPERATOR);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
