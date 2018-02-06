@@ -23,14 +23,19 @@ public class AnyMemoConverter {
 			RemoveLastWhiteSpaceTask.class, //
 			SaveTask.class };
 
+	@SuppressWarnings("unchecked")
 	public static void main(String... args) throws Exception {
-		AnyMemoConverterContext context = parseInputArguments(args);
-		if (context == null) {
-			displayHelp();
-		}
+		try {
+			AnyMemoConverterContext context = parseInputArguments(args);
+			if (context == null) {
+				displayHelp();
+			}
 
-		ExecutorTask executorTask = ExecutorTask.getConcurrentInstance();
-		executorTask.excecute(TASKS, context);
+			ExecutorTask executorTask = ExecutorTask.getConcurrentInstance();
+			executorTask.excecute(TASKS, context);
+		} catch (AnyMemoConverterException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	protected static AnyMemoConverterContext parseInputArguments(String... args) {

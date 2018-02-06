@@ -1,6 +1,8 @@
 package pl.softfly.amprepare.task;
 
 import java.io.File;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
@@ -56,6 +58,19 @@ public class AnyMemoConverterTaskTest {
 	@Test(timeout = 1000)
 	public void testLong() throws Exception {
 		test();
+	}
+
+	@Test(timeout = 1000)
+	public void testReadAndConvertUtf8TaskLockFile() throws Exception {
+		File outFile = File.createTempFile("testLock", ".txt");
+		outFile.deleteOnExit();
+		RandomAccessFile rf = new RandomAccessFile(outFile, "rw");
+		FileChannel fileChannel = rf.getChannel();
+		fileChannel.tryLock();
+
+		AnyMemoConverter.main(outFile.getAbsolutePath());
+		rf.close();
+		
 	}
 
 }
